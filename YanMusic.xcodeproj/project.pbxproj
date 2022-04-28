@@ -17,6 +17,15 @@
 		02CE211D27ED61A600DA22C3 /* YanMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE211C27ED61A600DA22C3 /* YanMusicTests.swift */; };
 		02CE212727ED61A700DA22C3 /* YanMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE212627ED61A700DA22C3 /* YanMusicUITests.swift */; };
 		02CE212927ED61A700DA22C3 /* YanMusicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE212827ED61A700DA22C3 /* YanMusicUITestsLaunchTests.swift */; };
+		02D17155281A59CF005EEBAA /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D17154281A59CF005EEBAA /* MulticastDelegate.swift */; };
+		02D17156281A59CF005EEBAA /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D17154281A59CF005EEBAA /* MulticastDelegate.swift */; };
+		02D17157281A59D0005EEBAA /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D17154281A59CF005EEBAA /* MulticastDelegate.swift */; };
+		02D17159281A59F2005EEBAA /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D17158281A59F2005EEBAA /* PlaylistTableViewController.swift */; };
+		02D1715A281A59F2005EEBAA /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D17158281A59F2005EEBAA /* PlaylistTableViewController.swift */; };
+		02D1715B281A59F2005EEBAA /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D17158281A59F2005EEBAA /* PlaylistTableViewController.swift */; };
+		02D1715D281A5AEA005EEBAA /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D1715C281A5AEA005EEBAA /* Music.swift */; };
+		02D1715E281A5AEA005EEBAA /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D1715C281A5AEA005EEBAA /* Music.swift */; };
+		02D1715F281A5AEA005EEBAA /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D1715C281A5AEA005EEBAA /* Music.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,9 @@
 		02CE212227ED61A700DA22C3 /* YanMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YanMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CE212627ED61A700DA22C3 /* YanMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanMusicUITests.swift; sourceTree = "<group>"; };
 		02CE212827ED61A700DA22C3 /* YanMusicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanMusicUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02D17154281A59CF005EEBAA /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		02D17158281A59F2005EEBAA /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
+		02D1715C281A5AEA005EEBAA /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,7 @@
 		02CE210127ED61A600DA22C3 /* YanMusic */ = {
 			isa = PBXGroup;
 			children = (
+				02D17153281A59BD005EEBAA /* Database */,
 				02CE210227ED61A600DA22C3 /* AppDelegate.swift */,
 				02CE210427ED61A600DA22C3 /* SceneDelegate.swift */,
 				02CE210627ED61A600DA22C3 /* ViewController.swift */,
@@ -109,6 +122,8 @@
 				02CE211027ED61A600DA22C3 /* LaunchScreen.storyboard */,
 				02CE211327ED61A600DA22C3 /* Info.plist */,
 				02CE210B27ED61A600DA22C3 /* YanMusic.xcdatamodeld */,
+				02D17158281A59F2005EEBAA /* PlaylistTableViewController.swift */,
+				02D1715C281A5AEA005EEBAA /* Music.swift */,
 			);
 			path = YanMusic;
 			sourceTree = "<group>";
@@ -128,6 +143,14 @@
 				02CE212827ED61A700DA22C3 /* YanMusicUITestsLaunchTests.swift */,
 			);
 			path = YanMusicUITests;
+			sourceTree = "<group>";
+		};
+		02D17153281A59BD005EEBAA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				02D17154281A59CF005EEBAA /* MulticastDelegate.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CE210727ED61A600DA22C3 /* ViewController.swift in Sources */,
+				02D17159281A59F2005EEBAA /* PlaylistTableViewController.swift in Sources */,
 				02CE210327ED61A600DA22C3 /* AppDelegate.swift in Sources */,
+				02D17155281A59CF005EEBAA /* MulticastDelegate.swift in Sources */,
+				02D1715D281A5AEA005EEBAA /* Music.swift in Sources */,
 				02CE210D27ED61A600DA22C3 /* YanMusic.xcdatamodeld in Sources */,
 				02CE210527ED61A600DA22C3 /* SceneDelegate.swift in Sources */,
 			);
@@ -273,6 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CE211D27ED61A600DA22C3 /* YanMusicTests.swift in Sources */,
+				02D1715A281A59F2005EEBAA /* PlaylistTableViewController.swift in Sources */,
+				02D17156281A59CF005EEBAA /* MulticastDelegate.swift in Sources */,
+				02D1715E281A5AEA005EEBAA /* Music.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +311,9 @@
 			files = (
 				02CE212927ED61A700DA22C3 /* YanMusicUITestsLaunchTests.swift in Sources */,
 				02CE212727ED61A700DA22C3 /* YanMusicUITests.swift in Sources */,
+				02D1715F281A5AEA005EEBAA /* Music.swift in Sources */,
+				02D17157281A59D0005EEBAA /* MulticastDelegate.swift in Sources */,
+				02D1715B281A59F2005EEBAA /* PlaylistTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
