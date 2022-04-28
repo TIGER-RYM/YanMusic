@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageChange()
+        getMusicData()
     }
     
     func imageChange() {
@@ -36,21 +37,39 @@ class ViewController: UIViewController {
         }
     }
     
+    func getMusicData() {
+        guard let urlString = music!.musicLink, let url = URL(string: urlString) else {
+            return
+        }
+        Task {
+            do {
+                let request = URLRequest(url: url)
+                let (data, response) = try await URLSession.shared.data(for: request)
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    return
+                }
+                musicData = data
+            } catch let error{
+                print(error)
+            }
+        }
+    }
+    
     @IBAction func didTapButton() {
         if let audioPlayer = audioPlayer, audioPlayer.isPlaying {
-            audioPlayer.stop()
+            audioPlayer.pause()
         } else {
-            Task {
-                do {
-                    guard let urlString = music!.musicLink, let audioURL = URL(string: urlString) else { return }
-                    let (data, response) = try await URLSession.shared.data(from: audioURL)
-                    guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
-                    self.audioPlayer = try AVAudioPlayer(data: data)
-                    self.audioPlayer?.play()
+            do {
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+
+                guard let musicData = musicData else {
+                    return
                 }
-                catch {
-                    print(error.localizedDescription)
-                }
+                audioPlayer = try AVAudioPlayer(data: musicData)
+                audioPlayer?.play()
+            } catch {
+                print(error.localizedDescription)
             }
         }
     }
