@@ -7,18 +7,39 @@
 
 import Foundation
 
-class Music: NSObject {
+class Music: NSObject, Decodable {
     var musicLink: String?
     var title: String?
     var thumbnailLink: String?
     var length: String?
     var author: String?
+    var musicID: String?
     
-    init(musicLink: String, title: String, thumbnailLink: String, length: String, author: String) {
-        self.musicLink = musicLink
-        self.title = title
-        self.thumbnailLink = thumbnailLink
-        self.length = length
-        self.author = author
+    private enum MusicKeys: String, CodingKey{
+        case title
+        case id
+        case bestThumbnail
+        case author
+        case duration
+    }
+    
+    private enum AuthorKeys: String, CodingKey {
+        case name
+    }
+
+    private enum ThumbnailKeys: String, CodingKey {
+        case url
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let rootContainer = try decoder.container(keyedBy: MusicKeys.self)
+        let imageContainer = try? rootContainer.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .bestThumbnail)
+        let authorContainer = try? rootContainer.nestedContainer(keyedBy: AuthorKeys.self, forKey: .author)
+        
+        title = try? rootContainer.decode(String.self, forKey: .title)
+        thumbnailLink = try imageContainer?.decode(String.self, forKey: .url)
+        length = try? rootContainer.decode(String.self, forKey: .duration)
+        author = try authorContainer?.decode(String.self, forKey: .name)
+        musicID = try? rootContainer.decode(String.self, forKey: .id)
     }
 }

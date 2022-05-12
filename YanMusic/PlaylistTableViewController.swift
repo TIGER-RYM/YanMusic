@@ -35,13 +35,8 @@ class PlaylistTableViewController: UITableViewController {
          self.present(alertController, animated: true, completion: nil)
     }
     
-    func createDefaultMusics(){
-        allMusics.append(Music(musicLink: "https://mgamma.123tokyo.xyz/get.php/5/5e/-u4sPnpaFEA.mp3?cid=MmEwMTo0Zjg6YzAxMDo5ZmE2OjoxfE5BfERF&h=gMEduTUfQbWle1_ujYFGDw&s=1651161620&n=Jay-Chou-Big-Ben-Official-MV", title: "周杰倫 Jay Chou【大笨鐘 Big Ben】Official MV", thumbnailLink: "https://i.ytimg.com/vi/-u4sPnpaFEA/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCRs2-CKR5n1oejgQLrtb8Fer4S0A", length: "4:07", author: "周杰倫 Jay Chou"))
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        createDefaultMusics()
 //        filteredMusics = allMusics
 //
 //        let searchController = UISearchController(searchResultsController: nil)

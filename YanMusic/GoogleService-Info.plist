@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>411131445914-0etp00tmfk36dp4cb0l265hsk8jidufi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.411131445914-0etp00tmfk36dp4cb0l265hsk8jidufi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDNQhcWCp-2zXhamS7ZMxOhJyOEu5M7sPo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>411131445914</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>TIGER-RYM.YanMusic</string>
+	<key>PROJECT_ID</key>
+	<string>yanmusic-2ff25</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yanmusic-2ff25.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:411131445914:ios:335c5c01dcdbe1e7f61523</string>
+</dict>
+</plist>

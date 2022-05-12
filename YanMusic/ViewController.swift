@@ -66,6 +66,7 @@ class ViewController: UIViewController {
                 guard let musicData = musicData else {
                     return
                 }
+                
                 audioPlayer = try AVAudioPlayer(data: musicData)
                 audioPlayer?.play()
             } catch {
