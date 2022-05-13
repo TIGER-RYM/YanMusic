@@ -10,6 +10,7 @@ import AVFoundation
 
 class CurrentPlayingViewController: UIViewController {
     
+    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     @IBOutlet var button: UIButton!
     @IBOutlet weak var image: UIImageView!
     var music: Music?
@@ -18,6 +19,8 @@ class CurrentPlayingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        button.isHidden = true
+        loadIndicator.startAnimating()
         imageChange()
         getMusicData()
     }
@@ -95,6 +98,9 @@ class CurrentPlayingViewController: UIViewController {
                 
                                 audioPlayer = try AVAudioPlayer(data: data)
                                 audioPlayer?.play()
+                                loadIndicator.stopAnimating()
+                                loadIndicator.hidesWhenStopped = true
+                                button.isHidden = false
                             } catch {
                                 print(error.localizedDescription)
                             }
