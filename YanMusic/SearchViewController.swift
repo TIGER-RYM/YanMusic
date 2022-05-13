@@ -40,8 +40,10 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     func requestMusic(_ musicName: String) async {
         let headers = [
+//            "X-RapidAPI-Host": "youtube-search-results.p.rapidapi.com",
+//            "X-RapidAPI-Key": "ba90d6feb0msh672519f6f3e9e9ap150e3djsn71bc8cd74dd1"
             "X-RapidAPI-Host": "youtube-search-results.p.rapidapi.com",
-            "X-RapidAPI-Key": "ba90d6feb0msh672519f6f3e9e9ap150e3djsn71bc8cd74dd1"
+            "X-RapidAPI-Key": "f39c14300amshabf63e8dd5e5697p19b9afjsncdc139ebeb0e"
         ]
         var uc = URLComponents()
         uc.scheme = "https"
@@ -129,7 +131,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "currentPlaying"{
-            let destination = segue.destination as! ViewController
+            let destination = segue.destination as! CurrentPlayingViewController
             destination.music = newMusic[tableView.indexPathForSelectedRow!.row]
         }
     }

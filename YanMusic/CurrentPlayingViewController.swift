@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class CurrentPlayingViewController: UIViewController {
     
     @IBOutlet var button: UIButton!
     @IBOutlet weak var image: UIImageView!
@@ -138,24 +138,16 @@ class ViewController: UIViewController {
 //            }
 //        }
     
-//    @IBAction func playAction(_ sender: Any) async{
-//        print("clicked")
-//        if let audioPlayer = audioPlayer, audioPlayer.isPlaying {
-//            audioPlayer.pause()
-//        } else {
-//            do {
-//                try AVAudioSession.sharedInstance().setMode(.default)
-//                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-//
-//                guard let musicData = musicData else {
-//                    return
-//                }
-//
-//                audioPlayer = try AVAudioPlayer(data: musicData)
-//                audioPlayer?.play()
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    @IBAction func playAction(_ sender: Any){
+        print("clicked")
+        if let audioPlayer = audioPlayer{
+            if audioPlayer.isPlaying {
+                audioPlayer.pause()
+                print("music paused")
+            } else {
+                audioPlayer.play()
+                print("music played")
+            }
+        }
+    }
 }

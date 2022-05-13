@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02553A00282CA9D50017A4C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 025539FF282CA9D50017A4C5 /* GoogleService-Info.plist */; };
 		02553A06282D51160017A4C5 /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02553A05282D51160017A4C5 /* VolumeData.swift */; };
+		02553A0C282E0D250017A4C5 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02553A0B282E0D250017A4C5 /* PlaylistViewController.swift */; };
 		02B77FE92823DBD300FD5ABE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B77FE82823DBD300FD5ABE /* LoginViewController.swift */; };
 		02B77FEE2823E2A700FD5ABE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 02B77FED2823E2A700FD5ABE /* FirebaseAuth */; };
 		02B77FF02823E2A700FD5ABE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 02B77FEF2823E2A700FD5ABE /* FirebaseFirestore */; };
@@ -16,7 +17,7 @@
 		02B77FF62824C7A000FD5ABE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B77FF52824C7A000FD5ABE /* SearchViewController.swift */; };
 		02CE210327ED61A600DA22C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE210227ED61A600DA22C3 /* AppDelegate.swift */; };
 		02CE210527ED61A600DA22C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE210427ED61A600DA22C3 /* SceneDelegate.swift */; };
-		02CE210727ED61A600DA22C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE210627ED61A600DA22C3 /* ViewController.swift */; };
+		02CE210727ED61A600DA22C3 /* CurrentPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE210627ED61A600DA22C3 /* CurrentPlayingViewController.swift */; };
 		02CE210A27ED61A600DA22C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CE210827ED61A600DA22C3 /* Main.storyboard */; };
 		02CE210D27ED61A600DA22C3 /* YanMusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02CE210B27ED61A600DA22C3 /* YanMusic.xcdatamodeld */; };
 		02CE210F27ED61A600DA22C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02CE210E27ED61A600DA22C3 /* Assets.xcassets */; };
@@ -55,12 +56,13 @@
 /* Begin PBXFileReference section */
 		025539FF282CA9D50017A4C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02553A05282D51160017A4C5 /* VolumeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
+		02553A0B282E0D250017A4C5 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		02B77FE82823DBD300FD5ABE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02B77FF52824C7A000FD5ABE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		02CE20FF27ED61A600DA22C3 /* YanMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YanMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CE210227ED61A600DA22C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02CE210427ED61A600DA22C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02CE210627ED61A600DA22C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02CE210627ED61A600DA22C3 /* CurrentPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayingViewController.swift; sourceTree = "<group>"; };
 		02CE210927ED61A600DA22C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02CE210C27ED61A600DA22C3 /* YanMusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YanMusic.xcdatamodel; sourceTree = "<group>"; };
 		02CE210E27ED61A600DA22C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 				02D17153281A59BD005EEBAA /* Database */,
 				02CE210227ED61A600DA22C3 /* AppDelegate.swift */,
 				02CE210427ED61A600DA22C3 /* SceneDelegate.swift */,
-				02CE210627ED61A600DA22C3 /* ViewController.swift */,
+				02CE210627ED61A600DA22C3 /* CurrentPlayingViewController.swift */,
 				02CE210827ED61A600DA22C3 /* Main.storyboard */,
 				02CE210E27ED61A600DA22C3 /* Assets.xcassets */,
 				02CE211027ED61A600DA22C3 /* LaunchScreen.storyboard */,
@@ -142,6 +144,7 @@
 				02B77FE82823DBD300FD5ABE /* LoginViewController.swift */,
 				02553A05282D51160017A4C5 /* VolumeData.swift */,
 				02B77FF52824C7A000FD5ABE /* SearchViewController.swift */,
+				02553A0B282E0D250017A4C5 /* PlaylistViewController.swift */,
 			);
 			path = YanMusic;
 			sourceTree = "<group>";
@@ -312,12 +315,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				02B77FF62824C7A000FD5ABE /* SearchViewController.swift in Sources */,
-				02CE210727ED61A600DA22C3 /* ViewController.swift in Sources */,
+				02CE210727ED61A600DA22C3 /* CurrentPlayingViewController.swift in Sources */,
 				02D17159281A59F2005EEBAA /* PlaylistTableViewController.swift in Sources */,
 				02CE210327ED61A600DA22C3 /* AppDelegate.swift in Sources */,
 				02D17155281A59CF005EEBAA /* MulticastDelegate.swift in Sources */,
 				02553A06282D51160017A4C5 /* VolumeData.swift in Sources */,
 				02B77FE92823DBD300FD5ABE /* LoginViewController.swift in Sources */,
+				02553A0C282E0D250017A4C5 /* PlaylistViewController.swift in Sources */,
 				02D1715D281A5AEA005EEBAA /* Music.swift in Sources */,
 				02CE210D27ED61A600DA22C3 /* YanMusic.xcdatamodeld in Sources */,
 				02CE210527ED61A600DA22C3 /* SceneDelegate.swift in Sources */,
