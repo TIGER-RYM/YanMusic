@@ -7,8 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import SwiftUI
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -18,6 +19,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     var currentUser: FirebaseAuth.User?
     var currentUsername: String?
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBAction func changeProfilePicAction(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
     
     @IBAction func didTapButton(_ sender: Any) {
         guard let username = usernameTextField.text, !username.isEmpty,
@@ -98,7 +107,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(currentUsername)
         if currentUsername != nil {
             currentUsernameLabel.text = currentUsername
             usernameLabel.isHidden = true
@@ -115,5 +123,13 @@ class LoginViewController: UIViewController {
             button.isHidden = false
             logoutButton.isHidden = true
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {
+            return
+        }
+        imageView.image = image
+        dismiss(animated: true)
     }
 }

@@ -67,6 +67,14 @@
                                     <action selector="logoutAction:" destination="7jA-bn-6w5" eventType="touchUpInside" id="UNZ-pQ-0xu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icG-yM-Isw">
+                                <rect key="frame" x="64" y="664" width="286" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Change Profile Picture"/>
+                                <connections>
+                                    <action selector="changeProfilePicAction:" destination="7jA-bn-6w5" eventType="touchUpInside" id="KgS-Mg-wEo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zMN-3u-kLo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,8 +83,11 @@
                             <constraint firstItem="Il5-W9-XVz" firstAttribute="leading" secondItem="zMN-3u-kLo" secondAttribute="leading" constant="32" id="5h5-q0-Rmk"/>
                             <constraint firstItem="bXC-x0-41W" firstAttribute="leading" secondItem="zMN-3u-kLo" secondAttribute="leading" constant="64" id="5i9-ja-lVc"/>
                             <constraint firstItem="9bZ-IP-c5A" firstAttribute="leading" secondItem="zMN-3u-kLo" secondAttribute="leading" constant="32" id="8IZ-jX-396"/>
+                            <constraint firstItem="icG-yM-Isw" firstAttribute="top" secondItem="mhp-Cc-4DS" secondAttribute="bottom" constant="32" id="8nV-2j-E9c"/>
                             <constraint firstItem="yQs-bs-TDR" firstAttribute="top" secondItem="cpn-8J-5vf" secondAttribute="bottom" constant="16" id="CP4-Gd-FPH"/>
+                            <constraint firstItem="zMN-3u-kLo" firstAttribute="trailing" secondItem="icG-yM-Isw" secondAttribute="trailing" constant="64" id="CrV-Fz-Ofr"/>
                             <constraint firstItem="zMN-3u-kLo" firstAttribute="trailing" secondItem="mhp-Cc-4DS" secondAttribute="trailing" constant="64" id="Eun-TV-aSz"/>
+                            <constraint firstItem="icG-yM-Isw" firstAttribute="leading" secondItem="zMN-3u-kLo" secondAttribute="leading" constant="64" id="JjA-sN-HqH"/>
                             <constraint firstItem="8rw-oN-eWX" firstAttribute="leading" secondItem="zMN-3u-kLo" secondAttribute="leading" constant="32" id="KDo-mA-9re"/>
                             <constraint firstItem="jmS-5U-0N1" firstAttribute="top" secondItem="8rw-oN-eWX" secondAttribute="bottom" constant="32" id="KgK-6k-c7w"/>
                             <constraint firstItem="bXC-x0-41W" firstAttribute="top" secondItem="zMN-3u-kLo" secondAttribute="top" constant="16" id="NYg-5u-4qm"/>
@@ -101,6 +112,7 @@
                     <connections>
                         <outlet property="button" destination="jmS-5U-0N1" id="Xu8-Qc-h6J"/>
                         <outlet property="currentUsernameLabel" destination="9bZ-IP-c5A" id="a7R-uA-HtE"/>
+                        <outlet property="imageView" destination="bXC-x0-41W" id="s1G-SH-sga"/>
                         <outlet property="logoutButton" destination="mhp-Cc-4DS" id="fJ4-aj-c3E"/>
                         <outlet property="passwordLabel" destination="Il5-W9-XVz" id="xUf-wG-QJC"/>
                         <outlet property="passwordTextField" destination="8rw-oN-eWX" id="Zjx-Xm-jYe"/>
