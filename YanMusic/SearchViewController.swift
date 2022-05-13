@@ -84,34 +84,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         }).resume()
     }
     
-    func getMusicLink(_ musicID: String) async -> String {
-        var musicLink: String?
-        let headers = [
-            "X-RapidAPI-Host": "youtube-mp3-download1.p.rapidapi.com",
-            "X-RapidAPI-Key": "ba90d6feb0msh672519f6f3e9e9ap150e3djsn71bc8cd74dd1"
-        ]
-        
-        let requestString = "https://youtube-mp3-download1.p.rapidapi.com/dl?id="
-        let urlString = requestString + musicID
-        
-        let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        let _: Void = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
-            guard let data = data, error == nil else { return }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
-                musicLink = json["link"] as? String
-            } catch let error as NSError {
-                print(error)
-            }
-        }).resume()
-        guard let link = musicLink else { return "empty string" }
-        return link
-    }
-    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         
         newMusic.removeAll()
@@ -153,8 +125,12 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let music = newMusic[indexPath.row]
-        performSegue(withIdentifier: "currentPlaying", sender: <#T##Any?#>)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "currentPlaying"{
+            let destination = segue.destination as! ViewController
+            destination.music = newMusic[tableView.indexPathForSelectedRow!.row]
+        }
     }
 }

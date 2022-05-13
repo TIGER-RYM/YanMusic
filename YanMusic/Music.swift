@@ -8,7 +8,6 @@
 import Foundation
 
 class Music: NSObject, Decodable {
-    var musicLink: String?
     var title: String?
     var thumbnailLink: String?
     var length: String?
