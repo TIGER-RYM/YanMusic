@@ -13,10 +13,11 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     let CELL_MUSIC = "musicCell"
     var newMusic = [Music]()
     var indicator = UIActivityIndicatorView()
+    var imgData: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.rowHeight = 400
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -86,6 +87,21 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         }).resume()
     }
     
+    func requestImage(music: Music) async{
+        guard let urlString = music.thumbnailLink, let url = URL(string: urlString) else {
+            return
+        }
+        Task {
+            do {
+                let request = URLRequest(url: url)
+                let (data, _) = try await URLSession.shared.data(for: request)
+                imgData = UIImage(data: data)
+            } catch let error{
+                print(error)
+            }
+        }
+    }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         
         newMusic.removeAll()
@@ -101,6 +117,11 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         URLSession.shared.invalidateAndCancel()
         
         Task {await requestMusic(searchText)}
+        for music in newMusic {
+            if music.title == ""{
+                newMusic.remove(at: index(ofAccessibilityElement: music))
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -118,13 +139,15 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_MUSIC, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_MUSIC, for: indexPath) as! MusicTableViewCell
 
         // Configure the cell...
-        let music = newMusic[indexPath.row]
-        cell.textLabel?.text = music.title
-        cell.detailTextLabel?.text = music.author
-        return cell
+            let music = newMusic[indexPath.row]
+            cell.img.image = music.musicImage
+            cell.authorLabel.text = music.author
+            cell.titleLabel.text = music.title
+            cell.durationLabel.text = music.length
+            return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

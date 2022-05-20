@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0221827F28374779002F9DEE /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221827E28374779002F9DEE /* MusicTableViewCell.swift */; };
 		02553A00282CA9D50017A4C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 025539FF282CA9D50017A4C5 /* GoogleService-Info.plist */; };
 		02553A06282D51160017A4C5 /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02553A05282D51160017A4C5 /* VolumeData.swift */; };
 		02553A0C282E0D250017A4C5 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02553A0B282E0D250017A4C5 /* PlaylistViewController.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0221827E28374779002F9DEE /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		025539FF282CA9D50017A4C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02553A05282D51160017A4C5 /* VolumeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
 		02553A0B282E0D250017A4C5 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				02553A05282D51160017A4C5 /* VolumeData.swift */,
 				02B77FF52824C7A000FD5ABE /* SearchViewController.swift */,
 				02553A0B282E0D250017A4C5 /* PlaylistViewController.swift */,
+				0221827E28374779002F9DEE /* MusicTableViewCell.swift */,
 			);
 			path = YanMusic;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				02D1715D281A5AEA005EEBAA /* Music.swift in Sources */,
 				02CE210D27ED61A600DA22C3 /* YanMusic.xcdatamodeld in Sources */,
 				02CE210527ED61A600DA22C3 /* SceneDelegate.swift in Sources */,
+				0221827F28374779002F9DEE /* MusicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
