@@ -9,7 +9,6 @@ import UIKit
 import Foundation
 
 class SearchTableViewController: UITableViewController, UISearchBarDelegate {
-    
     let CELL_MUSIC = "musicCell"
     var newMusic = [Music]()
     var indicator = UIActivityIndicatorView()
@@ -125,7 +124,14 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     // MARK: - Table view data source
-
+//    let database = Firestore.firestore()
+//    let musicRef = database.document("music/playlist")
+//    musicRef.getDocument{ snapshot, error in
+//        guard let data = snapshot?.data(), error == nil else{
+//            return
+//        }
+//        print(data)
+//    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

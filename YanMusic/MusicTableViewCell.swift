@@ -13,6 +13,9 @@ class MusicTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

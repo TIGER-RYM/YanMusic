@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class PlaylistViewController: UIViewController {
     @IBOutlet weak var currentUserLabel: UILabel!
     var currentUsername: String?
+    let database = Firestore.firestore()
+    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var musicID: UILabel!
     
     @IBAction func updateAction(_ sender: Any) {
         let defaults = UserDefaults.standard
@@ -23,6 +27,16 @@ class PlaylistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let musicRef = database.document("music/playlist")
+        musicRef.getDocument{ snapshot, error in
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+            guard let text = data["musicId"] as? String else {return}
+            DispatchQueue.main.async {
+                self.musicID.text = text
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -40,3 +54,16 @@ class PlaylistViewController: UIViewController {
         }
     }
 }
+//extension PlaylistViewController: UITableViewDelegate, UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let musicCell = tableView.dequeueReusableCell(withIdentifier: "playlistCell", for: indexPath)
+//        var content = musicCell.defaultContentConfiguration()
+//        musicCell.contentConfiguration = content
+//        
+//        return musicCell
+//    }
+//}

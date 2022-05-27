@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 import AVFoundation
 
 class CurrentPlayingViewController: UIViewController {
@@ -16,6 +17,20 @@ class CurrentPlayingViewController: UIViewController {
     var music: Music?
     var audioPlayer: AVAudioPlayer?
     var musicData: Data?
+    let database = Firestore.firestore()
+    
+    func saveData(muisc: Music) {
+        let musicRef = database.document("music/playlist")
+        if let res = muisc.musicID {
+            musicRef.setData(["musicId": res])
+            print("successful saved.")
+        }
+    }
+    @IBAction func addAction(_ sender: Any) {
+        if let music = music {
+            saveData(muisc: music)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

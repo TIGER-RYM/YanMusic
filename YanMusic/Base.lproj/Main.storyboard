@@ -184,6 +184,13 @@
                                     <action selector="updateAction:" destination="AeF-Fm-sof" eventType="touchUpInside" id="FjY-zz-T9o"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="musicID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gH-UQ-8fb">
+                                <rect key="frame" x="115" y="352" width="228" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="La5-Wz-t3s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -202,11 +209,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentUserLabel" destination="ejl-x4-lLl" id="xPH-iL-caP"/>
+                        <outlet property="musicID" destination="1gH-UQ-8fb" id="UnV-AZ-8n5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJf-Os-xxu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-859" y="-421"/>
+            <point key="canvasLocation" x="-859.4202898550725" y="-421.20535714285711"/>
         </scene>
         <!--Search-->
         <scene sceneID="R98-w3-Iyk">
@@ -313,6 +321,15 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RdI-Jc-kRM">
                                 <rect key="frame" x="128" y="296" width="158" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpp-kP-49e">
+                                <rect key="frame" x="172" y="448" width="50" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="addAction:" destination="O1Q-6c-kvq" eventType="touchUpInside" id="3cN-lh-3Ie"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4TR-Lj-Pij"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
